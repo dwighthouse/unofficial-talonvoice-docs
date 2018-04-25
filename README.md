@@ -12,7 +12,7 @@ These docs aim to provide a quick documentation experience on the use of various
 
 ### Links
 
-* [Official Site](https://talonvoice.com/)
+* [Official Site](https://talonvoice.com/) - includes latest download
 * [Official Slack Channel](https://join.slack.com/t/talonvoice/shared_invite/enQtMjUzODA5NzQwNjYzLTY1NzZjNzM4NjVhZjZhYWFlNmZkYmU2YzE2ZjQxZjcyMTgwNDk5NDg2YzhmZDRmNmEwYThkODEyYjY4ZGZmODE)
 * [Creator's Twitter Account](https://twitter.com/lunixbochs)
 * [Project's Patreon](https://www.patreon.com/lunixbochs/overview)
