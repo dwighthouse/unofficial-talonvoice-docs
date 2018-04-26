@@ -54,7 +54,6 @@ In the future, Talon will ship with a standard phrase list and language rules in
 
 For those not wishing to start from scratch, a good place to begin is by downloading the [`std.py` file](https://github.com/talonvoice/examples/blob/master/std.py) and adding it to the `~/.talon/user` folder. Read through the source code understand the basic commands that will then become available.
 
-
 ## Using Talon (voice)
 
 If using Dragon Naturally Speaking as the speech detection engine, start up that program first. Make sure that the microphone mode is set to "Sleep" mode (blue with moon icon), not Active or Disabled. In this mode, Dragon is only listening for its microphone activation command, which is normally `🔊 wake up`.
