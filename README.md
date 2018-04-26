@@ -22,9 +22,11 @@ These docs aim to provide a quick documentation experience on the use of various
 
 Talon is written primarily in Python. It hooks into speech recognition engines such as Dragon Naturally Speaking.
 
-Once installed, all of Talon's extensions and monitoring are in the folder `~/.talon/`. That is, in a hidden `.talon` folder in your user folder on Mac OS X, adjacent to the Desktop and Downloads folders.
+Once installed, all of Talon's extensions and monitoring are in the folder `~/.talon`. That is, in a hidden `.talon` folder in your user folder on Mac OS X, adjacent to the Desktop and Downloads folders.
 
-Inside the `.talon` folder are two notable things:
+**Note: To access this hidden folder via Finder, choose "Go > Go to Folder..." from the Menu Bar, or press ⌘+⇧+G, then enter the folder path `~/.talon`**
+
+Inside the `.talon` folder are two things to take note of.
 
 * `talon.log`
     - Open this file in the Console utility (`/Applications/Utilities/Console.app`) to see live updates from Talon
@@ -40,12 +42,23 @@ Inside the `.talon` folder are two notable things:
 
 The vast majority of speech/sound processing is controlled directly by scripts in the `user` folder, including basic features like simple dictation. This provides a lot of control over what is recognized and how it is handled. However, at the time of writing, there is almost nothing included by default.
 
+There are several repositories containing example scripts and tools available for copying or using as samples to build from.
+
+* [Official Example Scripts](https://github.com/talonvoice/examples)
+* [tabrat's scripts](https://github.com/tabrat/talon_user)
+* [tabrat's atom integration](https://github.com/tuomassalo/atom-talon)
+* [tuomassalo's scripts](https://github.com/tuomassalo/talon_user)
+* [dopey's scripts](https://github.com/dopey/talon_user)
+
+In the future, Talon will ship with a standard phrase list and language rules into which other systems can more consistenly be built. For now, however, it is largely left to the individual user to download or make the commands and scripts he wishes to use.
+
+For those not wishing to start from scratch, a good place to begin is by downloading the [`std.py` file](https://github.com/talonvoice/examples/blob/master/std.py) and adding it to the `~/.talon/user` folder. Read through the source code understand the basic commands that will then become available.
 
 
 ## Using Talon (voice)
 
-If using Dragon Naturally Speaking as the speech detection engine, start up that program first. Make sure that the microphone mode is set to "Sleep" mode (blue with moon icon), not Active or Disabled. In this mode, Dragon is only listening for its microphone activation command, which is normally 🔊wake up🔊.
+If using Dragon Naturally Speaking as the speech detection engine, start up that program first. Make sure that the microphone mode is set to "Sleep" mode (blue with moon icon), not Active or Disabled. In this mode, Dragon is only listening for its microphone activation command, which is normally `🔊 wake up`.
 
-**Note: Avoid saying 🔊wake up🔊 when using Talon to avoid enabling Dragon Naturally Speaking.**
+**Warning: Avoid saying `🔊 wake up` when using Talon to avoid enabling Dragon Naturally Speaking.**
 
 Once Dragon is running, start Talon. It will use system notifications to indicate when both the eye tracking and voice recognition systems are ready, or whether a system is unable to start and why.
