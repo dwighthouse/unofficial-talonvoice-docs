@@ -6,7 +6,7 @@ Documenting my learning experiences with Talon, the speech-to-text system.
 
 Talon is a next-generation speech-to-text system for coding, commanding, and dictating to a computer. It is currently in open beta and is under active development by its lead developer, Ryan Hileman, as of April 2018.
 
-Talon provides very good recognition and a still-developing set of APIs for extending it and adding commands. Current versions require the use of [Dragon Naturally Speaking](https://www.nuance.com/dragon.html) and Mac OS X at this time. The Talon project also includes support for the [Tobii 4C](http://a.co/bILYudx) eye tracker, which can allow the replacement of a mouse.
+Talon provides very good recognition and a still-developing set of APIs for extending it and adding commands. Current versions require the use of [Dragon Naturally Speaking](https://www.nuance.com/dragon.html) and macOS at this time. The Talon project also includes support for the [Tobii 4C](http://a.co/bILYudx) eye tracker, which can allow the replacement of a mouse.
 
 These docs aim to provide a quick documentation experience on the use of various APIs, best practices, and example extensions and commands.
 
@@ -20,9 +20,9 @@ These docs aim to provide a quick documentation experience on the use of various
 
 ## Installation Structure
 
-Talon is written primarily in Python. It hooks into speech recognition engines such as Dragon Naturally Speaking.
+Talon's user-facing API and scripts is written in Python. It hooks into speech recognition engines such as Dragon Naturally Speaking. In future versions, it will likely come bundled with its own speech recognition engine.
 
-Once installed, all of Talon's extensions and monitoring are in the folder `~/.talon`. That is, in a hidden `.talon` folder in your user folder on Mac OS X, adjacent to the Desktop and Downloads folders.
+Once installed, all of Talon's extensions and monitoring are in the folder `~/.talon`. That is, in a hidden `.talon` folder in your user folder on macOS, adjacent to the Desktop and Downloads folders.
 
 **Note: To access this hidden folder via Finder, choose "Go > Go to Folder..." from the Menu Bar, or press ⌘+⇧+G, then enter the folder path `~/.talon`**
 
@@ -56,8 +56,10 @@ For those not wishing to start from scratch, a good place to begin is by downloa
 
 ## Using Talon (voice)
 
-If using Dragon Naturally Speaking as the speech detection engine, start up that program first. Make sure that the microphone mode is set to "Sleep" mode (blue with moon icon), not Active or Disabled. In this mode, Dragon is only listening for its microphone activation command, which is normally `🔊 wake up`.
+Start up both Talon and Dragon Naturally Speaking.
 
-**Warning: Avoid saying `🔊 wake up` when using Talon to avoid enabling Dragon Naturally Speaking.**
+Make sure that the microphone mode for Dragon is set to "Sleep" mode (blue with moon icon), not Active or Disabled. In this mode, Dragon is only listening for its microphone activation command, which is normally `🔊 wake up`.
 
-Once Dragon is running, start Talon. It will use system notifications to indicate when both the eye tracking and voice recognition systems are ready, or whether a system is unable to start and why.
+**Warning: Avoid saying `🔊 wake up` when using Talon to avoid enabling Dragon Naturally Speaking dictation.**
+
+When Talon starts, it will use system notifications to indicate when both the eye tracking and voice recognition systems are ready, or whether a system is unable to start and why.
