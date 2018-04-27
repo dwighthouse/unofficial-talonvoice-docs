@@ -1,6 +1,6 @@
 # Keys List
 
-When specifying key combinations or individual keys, use these key names to represent the key in question.
+When specifying key combinations or individual keys, use these Key Strings or their alternate forms to represent the key in question.
 
 
 |     |  Key Name                    |  Key String      |  Alt Key String  |
