@@ -23,17 +23,17 @@ These docs aim to provide a quick documentation experience on the use of various
 ## Documentation
 
 * Education
-    - [Using Talon (voice)](docs/UsingTalonVoice.md) - How to start up and begin using Talon for voice control
-    - [Folder Structure](docs/FolderStructure.md) - Where Talon stores its user-accessible Scripts and logs
-    - [User Script Overview](docs/UserScriptOverview.md) - What User Scripts are and how to obtain them
-    - [Dictation Philosophy](docs/DictationPhilosophy.md) - Talon's underlying philosophy of speech-to-text phrase structure
+    - [Using Talon (voice)](UsingTalonVoice.md) - How to start up and begin using Talon for voice control
+    - [Folder Structure](FolderStructure.md) - Where Talon stores its user-accessible Scripts and logs
+    - [User Script Overview](UserScriptOverview.md) - What User Scripts are and how to obtain them
+    - [Dictation Philosophy](DictationPhilosophy.md) - Talon's underlying philosophy of speech-to-text phrase structure
 * API
-    - [User Script Structure](docs/UserScriptStructure.md) - How to make a new User Script in which all other API calls will be made
-    - [Context](docs/Context.md) - Containing Commands and Actions, limiting scope to particular applications or windows
-    - [Key](docs/Key.md) - Pressing sequences of key combinations
-    - [press](docs/press.md) - Pressing single key combination immediately
-    - [Rep](docs/Rep.md) - Repeating past Actions
-    - [Str](docs/Str.md) - Entering whole strings
+    - [User Script Structure](UserScriptStructure.md) - How to make a new User Script in which all other API calls will be made
+    - [Context](Context.md) - Containing Commands and Actions, limiting scope to particular applications or windows
+    - [Key](Key.md) - Pressing sequences of key combinations
+    - [press](press.md) - Pressing single key combination immediately
+    - [Rep](Rep.md) - Repeating past Actions
+    - [Str](Str.md) - Entering whole strings
 * Data
-    - [Alphabet](docs/Alphabet.md) - Saying individual letters
-    - [Keys List](docs/KeysList.md) - String representations of all keys for use with API calls
+    - [Alphabet](Alphabet.md) - Saying individual letters
+    - [Keys List](KeysList.md) - String representations of all keys for use with API calls
