@@ -4,6 +4,12 @@ Constructor for function that, when invoked, outputs literal strings as key pres
 
 ## Usage
 
+> **Str(custom_string)**
+>
+> custom_string - String to be inserted verbatum
+>
+> *Returns* - Function that does the string insertion when called
+
 The purpose of Str appears to be a way to output data directly with minimal interpretation. It converts `-`, `+`, `\n` and `\t` to their word equivalents and doesn't assume the input text is separated by spaces. This feature will primarily be used in custom helper functions where processing of the input data is done manually.
 
 ## Obtain

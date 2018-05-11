@@ -2,6 +2,7 @@
 
 Documenting my learning experiences with Talon, the speech-to-text system. These docs are not authorative or complete, but instead represent an 80/20 view of the API sufficient for getting started making extensions and using the system.
 
+
 ## Intro
 
 Talon is a next-generation speech-to-text system for coding, commanding, and dictating to a computer. It is currently in open beta and is under active development by creator, Ryan Hileman, as of April 2018.
@@ -18,48 +19,21 @@ These docs aim to provide a quick documentation experience on the use of various
 * [Creator's Twitter Account](https://twitter.com/lunixbochs)
 * [Project's Patreon](https://www.patreon.com/lunixbochs/overview)
 
-## Installation Structure
 
-Talon's user-facing API and scripts is written in Python. It hooks into speech recognition engines such as Dragon Naturally Speaking. In future versions, it will likely come bundled with its own speech recognition engine.
+## Documentation
 
-Once installed, all of Talon's extensions and monitoring are in the folder `~/.talon`. That is, in a hidden `.talon` folder in your user folder on macOS, adjacent to the Desktop and Downloads folders.
-
-**Note: To access this hidden folder via Finder, choose "Go > Go to Folder..." from the Menu Bar, or press ⌘+⇧+G, then enter the folder path `~/.talon`**
-
-Inside the `.talon` folder are two things to take note of.
-
-* `talon.log`
-    - Open this file in the Console utility (`/Applications/Utilities/Console.app`) to see live updates from Talon
-    - Updates include:
-        - Speech recognition debug information
-        - Script compilation failures for user scripts
-        - Anything printed to the command line in user scripts
-        - Other debug information
-* The `user` folder
-    - Any `*.py` files in this folder will be loaded by Talon as user scripts for handling detected speech/sounds when Talon loads. While Talon is running, it will detect any changes to these scripts and re-import them immediately, reporting errors in compilation via system notifications, if necessary.
-
-## User Scripts Overview
-
-The vast majority of speech/sound processing is controlled directly by scripts in the `user` folder, including basic features like simple dictation. This provides a lot of control over what is recognized and how it is handled. However, at the time of writing, there is almost nothing included by default.
-
-There are several repositories containing example scripts and tools available for copying or using as samples to build from.
-
-* [Official Example Scripts](https://github.com/talonvoice/examples)
-* [tabrat's scripts](https://github.com/tabrat/talon_user)
-* [tabrat's atom integration](https://github.com/tuomassalo/atom-talon)
-* [tuomassalo's scripts](https://github.com/tuomassalo/talon_user)
-* [dopey's scripts](https://github.com/dopey/talon_user)
-
-In the future, Talon will ship with a standard phrase list and language rules into which other systems can more consistenly be built. For now, however, it is largely left to the individual user to download or make the commands and scripts he wishes to use.
-
-For those not wishing to start from scratch, a good place to begin is by downloading the [`std.py` file](https://github.com/talonvoice/examples/blob/master/std.py) and adding it to the `~/.talon/user` folder. Read through the source code understand the basic commands that will then become available.
-
-## Using Talon (voice)
-
-Start up both Talon and Dragon Naturally Speaking.
-
-Make sure that the microphone mode for Dragon is set to "Sleep" mode (blue with moon icon), not Active or Disabled. In this mode, Dragon is only listening for its microphone activation command, which is normally `🔊 wake up`.
-
-**Warning: Avoid saying `🔊 wake up` when using Talon to avoid enabling Dragon Naturally Speaking dictation.**
-
-When Talon starts, it will use system notifications to indicate when both the eye tracking and voice recognition systems are ready, or whether a system is unable to start and why.
+* Education
+    - [Using Talon (voice)](docs/UsingTalonVoice.md) - How to start up and begin using Talon for voice control
+    - [Folder Structure](docs/FolderStructure.md) - Where Talon stores its user-accessible Scripts and logs
+    - [User Script Overview](docs/UserScriptOverview.md) - What User Scripts are and how to obtain them
+    - [Dictation Philosophy](docs/DictationPhilosophy.md) - Talon's underlying philosophy of speech-to-text phrase structure
+* API
+    - [User Script Structure](docs/UserScriptStructure.md) - How to make a new User Script in which all other API calls will be made
+    - [Context](docs/Context.md) - Containing Commands and Actions, limiting scope to particular applications or windows
+    - [Key](docs/Key.md) - Pressing sequences of key combinations
+    - [press](docs/press.md) - Pressing single key combination immediately
+    - [Rep](docs/Rep.md) - Repeating past Actions
+    - [Str](docs/Str.md) - Entering whole strings
+* Data
+    - [Alphabet](docs/Alphabet.md) - Saying individual letters
+    - [Keys List](docs/KeysList.md) - String representations of all keys for use with API calls

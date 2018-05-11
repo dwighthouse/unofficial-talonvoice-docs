@@ -2,9 +2,11 @@
 
 When specifying key combinations or individual keys, use these Key Strings or their alternate forms to represent the key in question.
 
+Alphabetical (a-z), numerical (0-9), and most keyboard symbols (comma, semi-colon, dash, single quote, etc.) characters can be used literally in a key combination string.
+
 
 |     |  Key Name                    |  Key String       |  Alt Key String  |
-|-----|------------------------------|-------------------|------------------|
+|:---:|------------------------------|-------------------|------------------|
 |  ⌃  |  Control                     |  ctrl             |                  |
 |  ⌃  |  Right Control               |  rctrl            |                  |
 |  ⌥  |  Alt/Option                  |  alt              |                  |
