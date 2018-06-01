@@ -1,21 +1,35 @@
 # Key
 
-Constructor for function that, when invoked, presses one or more sequences of key combinations. It allows for easy intepretation of key combinations involving Control, Shift, and other special keys.
+Constructor for function that, when invoked, presses one or more key combination sequences. It is intended to be placed directly in a [Context's](Context.md) keymap, rather than being called directly, which [press](press.md) is more suited to.
 
 
 ## Usage
 
 > **Key(key_string)**
 >
-> key_string - String containing one or more space-separated key combinations, each of which are dash-separated sets of key names that will be held at the same time
+> key_string - String containing one or more space-separated keys or key combinations
 >
-> *Returns* - Function that executes the sequence of key combinations when called
+> *Returns* - Function that executes the key combination sequences when called
 
-When the return value of Key is called, it executes each space-separated key combination in sequence. Each key combination is a dash-separated sequence of key names that will be held during that combination. For example, 'cmd-s' would hold the Command key (⌘) and then press the 's' key.
+When the return value of Key is called, it executes each space-separated keys or key combinations in sequence.
 
-Normally, Keys are created to be called by the result of detected Command phrases in a [Context's](Context.md) keymap, rather than being called directly, like [Str](Str.md) or [press](press.md).
+A single key string simply presses the corresponding key, such as the string 'k', which will press the K key.
 
-Check the [Keys List](KeysList.md) for a list of available key name strings.
+A key combination is a dash-separated set of modifier keys followed by a single non-modifier key. For example, 'cmd-shift-s' would hold the Command key (⌘) and the Shift key (⇧), and then press the S key.
+
+These can be combined in any order, and in any quantity, when separated by spaces. For example, the `key_string` 'cmd-p enter' would hold the Command key (⌘) and press the P key, then release both, then it would press the Enter key.
+
+Check the [Keys List](KeysList.md) for a list of all key name strings.
+
+### Available Modifier Keys
+
+|     |  Modifier Key Name           |  Key String       |  Example            |
+|:---:|------------------------------|-------------------|---------------------|
+|  ⌃  |  Control                     |  ctrl             |  'ctrl-c'           |
+|  ⌥  |  Alt/Option                  |  alt              |  'alt-tab'          |
+|  ⌘  |  Command                     |  cmd              |  'cmd-s'            |
+|  ⇧  |  Shift                       |  shift            |  'cmd-alt-shift-v'  |
+|     |  Fn Key (Modifier)           |  fn               |  'fn-f2'            |
 
 
 ## Obtain

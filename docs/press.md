@@ -1,19 +1,33 @@
 # press
 
-Presses a single, dash-separated key combination. It allows for easy intepretation of key combinations involving Control, Shift, and other special keys. It is meant for usage in custom functions in tandem with other operations such as [Str](Str.md).
+Presses a single key, or a single dash-separated key combination. It is meant for usage in custom functions in tandem with other operations such as [Str](Str.md), as opposed to [Key](Key.md) that is most often used directly in a [Context's](Context.md) keymap.
 
 
 ## Usage
 
 > **press(key_string)**
 >
-> key_string - String containing a single key combination, which is a dash-separated set of key names that will be held at the same time
+> key_string - String containing a single key or key combination
 >
-> *Returns* - Function that executes the sequence of key combinations when called
+> *Returns* - None
 
-When called, the key combination is executed immediately. Each key combination is a dash-separated sequence of key names that will be held during that combination. For example, 'cmd-s' would hold the Command key (⌘) and then press the 's' key.
+When called, the provided key string, or key combination string, is executed immediately.
 
-Call the function directly with a parameter string containing a single, dash-separated key combination.
+A single key string simply presses the corresponding key, such as the string 'k', which will press the K key.
+
+A key combination is a dash-separated set of modifier keys followed by a single non-modifier key. For example, 'cmd-shift-s' would hold the Command key (⌘) and the Shift key (⇧), and then press the S key.
+
+Check the [Keys List](KeysList.md) for a list of all key name strings.
+
+### Available Modifier Keys
+
+|     |  Modifier Key Name           |  Key String       |  Example            |
+|:---:|------------------------------|-------------------|---------------------|
+|  ⌃  |  Control                     |  ctrl             |  'ctrl-c'           |
+|  ⌥  |  Alt/Option                  |  alt              |  'alt-tab'          |
+|  ⌘  |  Command                     |  cmd              |  'cmd-s'            |
+|  ⇧  |  Shift                       |  shift            |  'cmd-alt-shift-v'  |
+|     |  Fn Key (Modifier)           |  fn               |  'fn-f2'            |
 
 
 ## Obtain
