@@ -13,7 +13,7 @@ A Context is a named structure containing mappings from Command phrases to [Key]
 >
 > exe - (Optional) TODO
 >
-> bundle - (Optional) String that limits the Context to Apps with the same bundle name
+> bundle - (Optional) String that limits the Context to apps with the same bundle name
 >
 > title - (Optional) String that limits the Context to windows with the same window title
 >
@@ -69,7 +69,7 @@ context.keymap({
 })
 ```
 
-> **Note:** App bundle name can be found by exploring inside the App's Package Contents. Access the Package Contents by right-clicking the App's executable in the Applications directory (usually at `/Applications`), and then choosing "Show Package Contents. Inside the Package, look inside the `Contents/Info.plist` file to see the Bundle Identifier.
+> **Note:** The app bundle name can be determined by running `osascript -e 'id of app "APP_NAME"'` in Terminal, where `APP_NAME` is the name of the app, such as 'Slack' or 'Google Chrome'. Alternatively, the app bundle name can be found by exploring inside the app's Package Contents. Access the Package Contents by right-clicking the app's executable in the Applications directory (usually at `/Applications`), and then choosing "Show Package Contents. Inside the Package, look inside the `Contents/Info.plist` file to see the Bundle Identifier.
 
 ### Context Limited by Window Title
 
