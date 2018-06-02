@@ -4,7 +4,7 @@ Talon, like most speech-to-text programs, can't tell the difference between homo
 
 To solve this, Talon uses special keywords that will be interpreted as individual letters when spoken. Memorizing these letter-words is very important to successfully programming or operating a computer by voice, since letters often make up part of keyboard shortcuts, and they can be used to spell out words that Dragon or Talon do not know or can't recognize.
 
-At the time of writing, the standard alphabet letter-words is as follows. Most other Commands can be learned through repetition and their association with their Command's meaning. These words, however, were chosen to ensure a unique sound to allow for easier and more accurate detection.
+At the time of writing, the standard alphabet letter-words is as follows. Most other [Commands](Commands.md) can be learned through repetition and their association with their [Command's](Commands.md) meaning. These words, however, were chosen to ensure a unique sound to allow for easier and more accurate detection.
 
 |  Letter  |  Spoken Command  |
 |:--------:|:----------------:|

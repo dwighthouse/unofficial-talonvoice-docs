@@ -1,19 +1,19 @@
 # Rep
 
-Constructor for function that, when invoked, repeats the last Action. That could include a Command Action, a Data Entry task, or even a previous repetition Action.
+Constructor for function that, when invoked, repeats the last [Action](Actions.md). That could include an [Action](Actions.md), a Data Entry task, or even a previous repetition [Action](Actions.md).
 
 
 ## Usage
 
 > **Rep(repeat_count)**
 >
-> repeat_count - Integer indicating the number of times to repeat the previous Action
+> repeat_count - Integer indicating the number of times to repeat the previous [Action](Actions.md)
 >
 > *Returns* - Result of the execution of Rep, which is needed by Talon to prevent infinite recursion
 
-The Rep function constructor takes a number argument indicating how many times to repeat the previous Action or task.
+The Rep function constructor takes a number argument indicating how many times to repeat the previous [Action](Actions.md) or task.
 
-Like [Key](Key.md), Rep can be used in response to a spoken Command phrase, or called directly in a custom function. However, when called directly, it must be carefully constructed as described below.
+Like [Key](Key.md), Rep can be used in response to a spoken [Command](Commands.md), or called directly in a custom function. However, when called directly, it must be carefully constructed as described below.
 
 
 ## Obtain
@@ -37,7 +37,7 @@ context.keymap({
 
 When saying `🔊 twice`, whatever happened immediately before will be repeated once. For example, saying `🔊 phrase hello world twice` would result in "hello worldhello world" being printed because the first part (`🔊 phrase hello world`) enters "hello world", and the second part (`🔊 twice`) enters it again.
 
-> **Warning:** The number argument passed to Rep is one less than the number of output values, not equal to it. Rep cannot retroactively remove the result of the previous Action, so this off-by-one must be taken into account.
+> **Warning:** The number argument passed to Rep is one less than the number of output values, not equal to it. Rep cannot retroactively remove the result of the previous [Action](Actions.md), so this off-by-one must be taken into account.
 
 ### Called directly in a function
 
@@ -58,4 +58,4 @@ context.keymap({
 
 > **Warning:** The constructed Rep function, `repeater` in this case, must have its `ctx` attribute set to `talon`, which is imported from `talon.voice`. Additionally, the result of calling `repeater` must be returned. Failing to do either will result in a Talon error.
 
-A general-purpose repetition Command can be built by parsing numbers in a phrase, then using the detected integer as input to the Rep constructor. An implementation of this is [repeater.py](https://github.com/dwighthouse/talonvoice-scripts/blob/master/repeater.py).
+A general-purpose repetition [Command](Commands.md) can be built by parsing numbers in a [Command](Commands.md), then using the detected integer as input to the Rep constructor. An implementation of this is [repeater.py](https://github.com/dwighthouse/talonvoice-scripts/blob/master/repeater.py).

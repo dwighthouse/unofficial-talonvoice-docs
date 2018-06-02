@@ -7,12 +7,12 @@ There are several repositories containing example Scripts and tools available fo
 * [Official Example Scripts](https://github.com/talonvoice/examples)
 * [dwighthouse's scripts](https://github.com/dwighthouse/talonvoice-scripts) - mine 😉
 * [tabrat's scripts](https://github.com/tabrat/talon_user)
-* [tabrat's atom integration](https://github.com/tuomassalo/atom-talon)
 * [tuomassalo's scripts](https://github.com/tuomassalo/talon_user)
+* [tuomassalo's atom integration](https://github.com/tuomassalo/atom-talon)
 * [dopey's scripts](https://github.com/dopey/talon_user)
 
-In the future, Talon will ship with a standard phrase list and language rules into which other systems can more consistently be built. For now, however, it is largely left to the individual user to download or make the Commands and Scripts he wishes to use.
+In the future, Talon will ship with a standard phrase list and language rules into which other systems can more consistently be built. For now, however, it is largely left to the individual user to download or make the [Commands](Commands.md) and Scripts he wishes to use.
 
-For those not wishing to start from scratch, a good place to begin is by downloading the [`std.py` file](https://github.com/talonvoice/examples/blob/master/std.py) and adding it to the `~/.talon/user` folder. Then, reading through the source code will illustrate what Command phrases are available and how to begin adding new ones.
+For those not wishing to start from scratch, a good place to begin is by downloading the [`std.py` file](https://github.com/talonvoice/examples/blob/master/std.py) and adding it to the `~/.talon/user` folder. Then, reading through the source code will illustrate what [Commands](Commands.md) are available and how to begin adding new ones.
 
 To build new User Scripts, read about the [User Script Structure](UserScriptStructure.md).

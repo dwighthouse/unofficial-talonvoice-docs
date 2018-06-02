@@ -1,0 +1,26 @@
+{
+  "name": "unofficial-talonvoice-docs",
+  "version": "1.0.0",
+  "description": "Documenting my learning experiences with Talon, the speech-to-text system.",
+  "main": "docs/README.md",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "links": "find ./docs -name \\*.md -exec ./node_modules/markdown-link-check/markdown-link-check {} \\;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwighthouse/unofficial-talonvoice-docs.git"
+  },
+  "author": "Dwight House",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dwighthouse/unofficial-talonvoice-docs/issues"
+  },
+  "homepage": "https://github.com/dwighthouse/unofficial-talonvoice-docs#readme",
+  "devDependencies": {
+    "markdown-link-check": "3.5.4"
+  }
+}

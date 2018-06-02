@@ -7,9 +7,9 @@ Documenting my learning experiences with Talon, the speech-to-text system. These
 
 Talon is a next-generation speech-to-text system for coding, commanding, and dictating to a computer. It is currently in open beta and is under active development by creator, Ryan Hileman, as of April 2018.
 
-Talon provides very good recognition and a still-developing set of APIs for extending it and adding commands. Current versions require the use of [Dragon Naturally Speaking](https://www.nuance.com/dragon.html) and macOS at this time. The Talon project also includes support for the [Tobii 4C](http://a.co/bILYudx) eye tracker, which can allow the replacement of a mouse.
+Talon provides very good recognition and a still-developing set of APIs for extending it and adding custom phrases. Current versions require the use of [Dragon Naturally Speaking](https://www.nuance.com/dragon.html) and macOS at this time. The Talon project also includes support for the [Tobii 4C](http://a.co/bILYudx) eye tracker, which can allow the replacement of a mouse.
 
-These docs aim to provide a quick documentation experience on the use of various APIs, best practices, and example extensions and commands.
+These docs aim to provide a quick documentation experience on the use of various APIs, best practices, and example extensions and operations.
 
 ### Links
 
@@ -29,10 +29,11 @@ These docs aim to provide a quick documentation experience on the use of various
     - [Dictation Philosophy](DictationPhilosophy.md) - Talon's underlying philosophy of speech-to-text phrase structure
 * API
     - [User Script Structure](UserScriptStructure.md) - How to make a new User Script in which all other API calls will be made
-    - [Context](Context.md) - Containing Commands and Actions, limiting scope to particular applications or windows
+    - [Context](Context.md) - Containing [Commands](Commands.md) and [Actions](Actions.md), limiting scope to particular applications or windows
+    - [ContextGroup](ContextGroup.md) - A grouping of [Contexts](Context.md)
     - [Key](Key.md) - Pressing sequences of key combinations
     - [press](press.md) - Pressing single key combination immediately
-    - [Rep](Rep.md) - Repeating past Actions
+    - [Rep](Rep.md) - Repeating past [Actions](Actions.md)
     - [Str](Str.md) - Entering whole strings
 * Data
     - [Alphabet](Alphabet.md) - Saying individual letters

@@ -15,9 +15,9 @@ When the return value of Key is called, it executes each space-separated keys or
 
 A single key string simply presses the corresponding key, such as the string 'k', which will press the K key.
 
-A key combination is a dash-separated set of modifier keys followed by a single non-modifier key. For example, 'cmd-shift-s' would hold the Command key (⌘) and the Shift key (⇧), and then press the S key.
+A key combination is a dash-separated set of modifier keys followed by a single non-modifier key. For example, 'cmd-shift-s' would hold the command key (⌘) and the Shift key (⇧), and then press the S key.
 
-These can be combined in any order, and in any quantity, when separated by spaces. For example, the `key_string` 'cmd-p enter' would hold the Command key (⌘) and press the P key, then release both, then it would press the Enter key.
+These can be combined in any order, and in any quantity, when separated by spaces. For example, the `key_string` 'cmd-p enter' would hold the command key (⌘) and press the P key, then release both, then it would press the Enter key.
 
 Check the [Keys List](KeysList.md) for a list of all key name strings.
 

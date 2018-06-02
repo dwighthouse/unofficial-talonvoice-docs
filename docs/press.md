@@ -62,7 +62,7 @@ Str('Copyright 2018')(None)
 press('cmd-left')
 ```
 
-This sequence would be executed as a custom function triggered by a Command. It would be something that might execute in a code editor using fairly standard keyboard shortcuts. Here's how it works:
+This sequence would be executed as a custom function triggered by a [Command](Commands.md). It would be something that might execute in a code editor using fairly standard keyboard shortcuts. Here's how it works:
 
 1. ⌘ + ↑ - moves the cursor to the beginning of the first line of text
 2. \n - makes a new line
