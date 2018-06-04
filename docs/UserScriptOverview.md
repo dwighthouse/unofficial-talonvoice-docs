@@ -10,6 +10,10 @@ There are several repositories containing example Scripts and tools available fo
 * [tuomassalo's scripts](https://github.com/tuomassalo/talon_user)
 * [tuomassalo's atom integration](https://github.com/tuomassalo/atom-talon)
 * [dopey's scripts](https://github.com/dopey/talon_user)
+* [pimentel's scripts](https://github.com/pimentel/talon_user)
+* [JonathanNickerson's scripts](https://github.com/JonathanNickerson/talon_voice_user_scripts)
+* [anonfunc's scripts](https://github.com/anonfunc/talon-user)
+* [jcooper-korg's scripts](https://github.com/jcooper-korg/talon_user)
 
 In the future, Talon will ship with a standard phrase list and language rules into which other systems can more consistently be built. For now, however, it is largely left to the individual user to download or make the [Commands](Commands.md) and Scripts he wishes to use.
 
