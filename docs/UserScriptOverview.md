@@ -15,8 +15,8 @@ There are several repositories containing example Scripts and tools available fo
 * [anonfunc's scripts](https://github.com/anonfunc/talon-user)
 * [jcooper-korg's scripts](https://github.com/jcooper-korg/talon_user)
 
-In the future, Talon will ship with a standard phrase list and language rules into which other systems can more consistently be built. For now, however, it is largely left to the individual user to download or make the [Commands](Commands.md) and Scripts he wishes to use.
+In the future, Talon will ship with a standard set of Voice Commands and language rules into which other systems can more consistently be built. For now, however, it is largely left to the individual user to download or make the Voice Commands and Scripts he wishes to use.
 
-For those not wishing to start from scratch, a good place to begin is by downloading the [`std.py` file](https://github.com/talonvoice/examples/blob/master/std.py) and adding it to the `~/.talon/user` folder. Then, reading through the source code will illustrate what [Commands](Commands.md) are available and how to begin adding new ones.
+For those not wishing to start from scratch, a good place to begin is by downloading the [`std.py` file](https://github.com/talonvoice/examples/blob/master/std.py) and adding it to the `~/.talon/user` folder. Then, reading through the source code will illustrate what Voice Commands are available and how to begin adding new ones.
 
 To build new User Scripts, read about the [User Script Structure](UserScriptStructure.md).

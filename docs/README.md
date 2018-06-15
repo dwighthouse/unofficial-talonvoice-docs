@@ -29,7 +29,7 @@ These docs aim to provide a quick documentation experience on the use of various
     - [Dictation Philosophy](DictationPhilosophy.md) - Talon's underlying philosophy of speech-to-text phrase structure
 * API
     - [User Script Structure](UserScriptStructure.md) - How to make a new User Script in which all other API calls will be made
-    - [Context](Context.md) - Containing [Commands](Commands.md) and [Actions](Actions.md), limiting scope to particular applications or windows
+    - [Context](Context.md) - Containing [Rules](Rules.md) and [Actions](Actions.md), limiting scope to particular applications or windows
     - [ContextGroup](ContextGroup.md) - A grouping of [Contexts](Context.md)
     - [Key](Key.md) - Pressing sequences of key combinations
     - [press](press.md) - Pressing single key combination immediately

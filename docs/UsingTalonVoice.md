@@ -10,4 +10,4 @@ Make sure that the microphone mode for Dragon is set to "Sleep" mode (blue with 
 
 When Talon starts, it will use system notifications to indicate when both the eye tracking and voice recognition systems are ready, or whether a system is unable to start and why.
 
-From here, speak into the microphone to enter data, execute [Actions](Actions.md), and perform other tasks. The available [Commands](Commands.md) will be determined by what User Scripts are installed. Read the [User Scripts Overview](UserScriptOverview.md) to learn how to add User Scripts to Talon.
+From here, speak into the microphone to enter data, execute [Actions](Actions.md), and perform other tasks. The available [Rules](Rules.md) will be determined by what User Scripts are installed. Read the [User Scripts Overview](UserScriptOverview.md) to learn how to add User Scripts to Talon.

@@ -1,6 +1,6 @@
 # Context
 
-A Context is a named structure containing mappings from [Commands](Commands.md) to [Actions](Actions.md). It also defines the application or window context in which this list of Command/Action combinations will or will not be recognized. By limiting the Context, the same [Commands](Commands.md) can mean and do different things in different applications, for example.
+A Context is a named structure containing mappings from [Rules](Rules.md) to [Actions](Actions.md) to create Voice Commands. It also defines the application or window context in which this list of Command/Action combinations will or will not be recognized. By limiting the Context, the same Voice Commands can mean and do different things in different applications, for example.
 
 
 ## Usage
@@ -23,15 +23,15 @@ A Context is a named structure containing mappings from [Commands](Commands.md) 
 >
 > *Returns* - Context object
 
-A Context is usually created at the beginning of a [User Script](UserScriptStructure.md), then one or more keymaps (Command/Action pairing objects) are applied to it via its `keymap` member function.
+A Context is usually created at the beginning of a [User Script](UserScriptStructure.md). Afterward, one or more sets of [Rule](Rules.md)/[Action](Actions.md) pairs (Voice Commands) are applied to it via its `keymap` member function.
 
-In its default usage, where it provides a universal Command/Action mappings to every application at all times, a Context serves little more than a way to pipe these mappings into Talon.
+In its default usage, where it provides universal Voice Commands to every application at all times, a Context serves little more than a way to pipe these mappings into Talon.
 
-However, using the various data strings and the `func` function, a Context can be significantly limited to only apply to certain applications, certain windows, or any arbitrary situation some custom code can determine. Doing so will allow for logical or memorable [Commands](Commands.md) in different applications without worrying about clobbering the meaning and functionality of the same [Commands](Commands.md) in other applications or Contexts.
+However, using the various data strings and the `func` function, a Context can be significantly limited to only apply to certain applications, certain windows, or any arbitrary situation some custom code can determine. Doing so will allow for logical or memorable [Rules](Rules.md) in different applications without worrying about clobbering the meaning and functionality of the same spoken phrase in other applications or Contexts.
 
 Any optional parameters can be used in any combination. For example, a Context could be limited both by `bundle` and `title`, but not the `exe`, `app`, or `func`.
 
-> **Warning:** If two different Contexts with the same name are loaded in Talon at the same time, the Context loaded most recently will take precedence. Future updates to Talon will have a way of merging Context [Commands](Commands.md) instead of overwriting them.
+> **Warning:** If two different Contexts with the same name are loaded in Talon at the same time, the Context loaded most recently will take precedence. Future updates to Talon will have a way of merging Context [Rules](Rules.md) instead of overwriting them.
 
 
 ## Obtain
@@ -59,7 +59,7 @@ context.keymap({
 
 ### Context Limited by App Title
 
-Limit this Context only to TextEdit by using the optional application title parameter (`app`) with TextEdit's name. This Context's keymap will only apply when TextEdit is active. This [Command](Commands.md) will toggle the document between Rich Text and Plain Text modes when saying `🔊 toggle doc` py programmatically pressing the key combination ⌘ + ⇧ + T
+Limit this Context only to TextEdit by using the optional application title parameter (`app`) with TextEdit's name. This Context's keymap will only apply when TextEdit is active. This Voice Command will toggle the document between Rich Text and Plain Text modes when saying `🔊 toggle doc` py programmatically pressing the key combination ⌘ + ⇧ + T
 
 ```python
 from talon.voice import Context, Key
@@ -73,7 +73,7 @@ context.keymap({
 
 ### Context Limited by App Binary Full Path
 
-Limit this Context only to Finder by using the optional full path to binary parameter (`exe`) with the full path to Finder's binary. This Context's keymap will only apply when Finder is active. This [Command](Commands.md) will move up one level in the folder hierarchy when saying `🔊 upward` by programmatically pressing the key combination ⌘ + ↑.
+Limit this Context only to Finder by using the optional full path to binary parameter (`exe`) with the full path to Finder's binary. This Context's keymap will only apply when Finder is active. This Voice Command will move up one level in the folder hierarchy when saying `🔊 upward` by programmatically pressing the key combination ⌘ + ↑.
 
 ```python
 from talon.voice import Context, Key
@@ -87,7 +87,7 @@ context.keymap({
 
 ### Context Limited by App Bundle Name
 
-Limit this Context only to Google Chrome by using the optional named bundle parameter (`bundle`) with Google Chrome's app bundle name. This Context's keymap will only apply when Google Chrome is active. This [Command](Commands.md) focuses the address bar when saying `🔊 address bar` by programmatically pressing the key combination ⌘ + L.
+Limit this Context only to Google Chrome by using the optional named bundle parameter (`bundle`) with Google Chrome's app bundle name. This Context's keymap will only apply when Google Chrome is active. This Voice Command focuses the address bar when saying `🔊 address bar` by programmatically pressing the key combination ⌘ + L.
 
 ```python
 from talon.voice import Context, Key
@@ -103,7 +103,7 @@ context.keymap({
 
 ### Context Limited by Window Title
 
-Limit this Context only to windows with the name 'journal.md'. This Context's keymap may apply in multiple applications, so long as the window name matches. This [Command](Commands.md) starts a new log entry at the top of the file, with the current date, then starts the next line, when saying `🔊 new log`.
+Limit this Context only to windows with the name 'journal.md'. This Context's keymap may apply in multiple applications, so long as the window name matches. This Voice Command starts a new log entry at the top of the file, with the current date, then starts the next line, when saying `🔊 new log`.
 
 ```python
 from talon.voice import Context, press, Str
@@ -139,7 +139,7 @@ context.keymap({
 
 Limit this Context by an arbitrary function. If the `func` function returns `True`, the Context will be active, otherwise it will not be. The app and window objects are passed in for use, but any arbitrary code and data source can be used.
 
-This [Command](Commands.md) starts a blockquote entry on a new line, when saying `🔊 quoted`, but only in files with the ".md" extension in the title.
+This Voice Command starts a blockquote entry on a new line, when saying `🔊 quoted`, but only in files with the ".md" extension in the title.
 
 ```python
 from talon.voice import Context, press, Str
