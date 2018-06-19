@@ -25,10 +25,13 @@ These docs aim to provide a quick documentation experience on the use of various
 * Education
     - [Using Talon (voice)](UsingTalonVoice.md) - How to start up and begin using Talon for voice control
     - [Folder Structure](FolderStructure.md) - Where Talon stores its user-accessible Scripts and logs
-    - [User Script Overview](UserScriptOverview.md) - What User Scripts are and how to obtain them
     - [Dictation Philosophy](DictationPhilosophy.md) - Talon's underlying philosophy of speech-to-text phrase structure
-* API
+* User Scripts
+    - [User Script Overview](UserScriptOverview.md) - What User Scripts are and how to obtain them
     - [User Script Structure](UserScriptStructure.md) - How to make a new User Script in which all other API calls will be made
+    - [Rules](Rules.md) - Strings defining what spoken phrases can be recognized, with many options
+    - [Actions](Actions.md) - One or more operations performed in response to a successful Rule recognition
+* API
     - [Context](Context.md) - Containing [Rules](Rules.md) and [Actions](Actions.md), limiting scope to particular applications or windows
     - [ContextGroup](ContextGroup.md) - A grouping of [Contexts](Context.md)
     - [Key](Key.md) - Pressing sequences of key combinations

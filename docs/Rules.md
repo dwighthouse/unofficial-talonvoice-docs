@@ -102,7 +102,7 @@ A sequence of one or more words that will be recognized as a whole, without expl
 * `phrase <dgndictation>` - Recognizes "phrase (ANY_NUMBER_OF_WORDS) (AUDITORY_PAUSE)"
 * `say <dgndictation> [over]` - Recognizes "say (ANY_NUMBER_OF_WORDS) (AUDITORY_PAUSE)" or "say (ANY_NUMBER_OF_WORDS) over"
   - Using an optional word at the end to signal the end of a phrase recognition can sometimes improve Talon's ability to recognize.
-  - However, this only applies sometimes, in the context of a subsequent recognized Rule. The implementation is currently incomplete, so do not rely on this feature.
+  - However, this only applies sometimes, in relation to a subsequent recognized Rule. The implementation is currently incomplete, so do not rely on this feature.
 
 
 
@@ -133,7 +133,7 @@ To see a practical example, read the [source of the `switcher.py` script](https:
 
 ## Combining Structural Items
 
-Structural Items can be combined and nested where it makes sense. Here are several examples.
+Structural Items can be combined and nested where it makes sense. Here are a few examples.
 
 * `(upper | title | string)+ [<dgndictation>]` - Recognizes any combination and quantity of "upper", "title", and "string" followed by (ANY_NUMBER_OF_WORDS)
 * `(op | is) greater [than]` - Recognizes "op greater", "is greater", "op greater than", and "is greater than"
@@ -142,7 +142,9 @@ Structural Items can be combined and nested where it makes sense. Here are sever
 
 ## Future Structural Items
 
-Some Structural Items are not yet fully implemented or available. **These are placeholders. Do not use.**
+Some Structural Items are not yet fully implemented or available.
+
+**These are placeholders. Do not use.**
 
 ### Arbitrary Word
 
