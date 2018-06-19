@@ -10,12 +10,12 @@ A given Rule is made up of one or more Structural Items. Most Structural Items c
 
 ### Word or Number
 
-Any standard word or numerical digit. Variants in spelling are usually acceptable.
+Any standard word or numerical digit.
 
 * `save` - Recognizes "save"
 * `apple` - Recognizes "apple"
 * `3` - Recognizes "three"
-* `their` - Recognizes "there", "their", and "they're"
+* `there` - Recognizes "there", "their", and "they're"
 
 
 
@@ -35,7 +35,7 @@ Alternative words and phrases can be recognized as the same Rule by separting th
 
 This is mostly used when there is more than one common way to describe an [Action](Actions.md), or to provide a shorthand verbal syntax while retaining the more verbose and understandable original.
 
-This can also be useful if there are alternate spellings, or very similar sounding words, for a word that is harder to recognize.
+This can also be useful for very similar sounding words if that word is harder to recognize.
 
 * `(enter | return)` - Recognizes either "enter" or "return"
 * `(dubquote | double quote)` - Recognizes either "dubquote" or "double quote"
@@ -43,7 +43,7 @@ This can also be useful if there are alternate spellings, or very similar soundi
 
 
 
-### Optional Partial Phrase
+### Optionals
 
 A sequence of Structural Items inside square brackets that will be counted as optional to the recognition of the phrase. The bracketed sequences can be nested.
 
@@ -52,9 +52,8 @@ A sequence of Structural Items inside square brackets that will be counted as op
 
 #### Usage for Ambiguity Reduction
 
-Optional Partial Phrases can sometimes also be useful in providing Talon with some help recognizing spoken phrases with ambigious length by adding an optional final terminating word or phrase. For example, if using the (later explained) `<dgndictation>` to recognize an arbitrary phrase, adding an optional `[over]` ending phrase will help Talon deliniate when to stop that particular Rule recognition. Without using the optional phrase, Talon will have to rely on an auditory pause.
+Optionals can sometimes also be useful in providing Talon with some help recognizing spoken phrases with ambigious length by adding an optional final terminating word or phrase. For example, if using the (later explained) `<dgndictation>` to recognize an arbitrary phrase, adding an optional `[over]` ending phrase will help Talon deliniate when to stop that particular Rule recognition. Without using the optional phrase, Talon will have to rely on an auditory pause.
 
-> **Note:** If the entire Rule is entirely made up of an Optional Partial Phrase (ex. `[wholely optional]`), Talon will treat the Rule as if it does not have the brackets, aka, not optional. Avoid this construction as it serves no purpose and might lead to confusion.hello worldhello world movementhello world movement
 
 
 
@@ -70,30 +69,28 @@ A sequence of Structural Items that are logically separate from other parts of t
 
 ### Zero or More
 
-When following a word or Grouping with a star ("*"), the word or Grouping contents can be recognized zero or more times. It is recommended to always use the Grouping style.
+When following a word or Grouping with a star ("*"), the word or Grouping contents can be recognized zero or more times.
 
 * `my (super | quantum)* computer` - Recognizes "my computer", "my super computer", "my quantum computer", "my super quantum computer", "my quantum super computer", "my quantum quantum computer", etc.
 * `really* good` - Recognizes "good", "really good", "really really good", etc.
-  - **This style is not recommended.**
 
 
 
 ### One or More
 
-When following a word or Grouping with a plus ("+"), the word or Grouping contents will be recognized one or more times. It is recommended to always use the Grouping style.
+When following a word or Grouping with a plus ("+"), the word or Grouping contents will be recognized one or more times.
 
 * `(eye | mighty | apple)+ mouse` - Recognizes "iMouse", "Mighty Mouse", "Apple Mouse", "Apple iMouse", etc.
   - Does **NOT** recognize "mouse"
 * `simply being loved+` - Recognizes "simply being loved", "simply being loved loved", ["simply being loved loved loved"](https://www.youtube.com/watch?v=VGqBGdHcbd8), etc.
-  - **This style is not recommended.**
-
-> **Note:** `(...)*` is not the equivalent of `[...]+`. `[...]+` is a syntax error.
 
 
 
 ### Arbitrary Phrase
 
 A sequence of one or more words that will be recognized as a whole, without explicitly defining what words those are. This is defined in Rule strings as `<dgndictation>`.
+
+TODO: Identify the extent of the capabilities of this feature, documenting any issues found.
 
 > **Note:** The Arbitrary Phrase Structural Item will often, but not always, intrepret other Rules inside the Arbitrary Phrase. This can lead to unexpected output.
 
@@ -127,8 +124,6 @@ The reason this might be useful is because the DYNAMIC_LIST can be dynamically u
 
 To see a practical example, read the [source of the `switcher.py` script](https://github.com/talonvoice/examples/blob/master/switcher.py). This script dynamically recognizes when applications are opened and closed. By updating a list of application names when anything changes, the script allows the user to switch to any open application, even as the set of available applications changes.
 
-> **Warning:** This is not well defined and there is some subtlety missing in this description that can become important. Please use with care.
-
 
 
 ## Combining Structural Items
@@ -137,6 +132,42 @@ Structural Items can be combined and nested where it makes sense. Here are a few
 
 * `(upper | title | string)+ [<dgndictation>]` - Recognizes any combination and quantity of "upper", "title", and "string" followed by (ANY_NUMBER_OF_WORDS)
 * `(op | is) greater [than]` - Recognizes "op greater", "is greater", "op greater than", and "is greater than"
+* `super (mario | luigi) [(the green | the red)]` - Recognizes "super mario", "super luigi", "super mario the green", "super mario the red", "super luigi the green", and "super luigi the red"
+
+
+
+## Considerations and Errata
+
+### Alternate Spellings
+
+Even though Rules can be created with alternate spellings for words that sound the same, it is a best practice that **words that sound the same should be spelled the same across all Rules**, at least until phoneme decomposition parsing is implemented. This is the recommendation from Ryan Hileman.
+
+### Wholely Optional Rules
+
+If a Rule is entirely made up of an Optional (ex. `[wholely optional]`), Talon will not recognize the Rule's absense (since Talon will never treat silence as a Rule). In the future, wholely optional Rules may be used within another Rule using a special syntax that is not yet exposed.
+
+### Alternates in Optionals
+
+Bare Alternates ("|") cannot be used inside an Optional ("[]"), as it is a syntax error. Instead the Alternates must be inside a Grouping inside the Optional.
+
+* `super (mario | luigi) [(the green | the red)]` - valid
+* `super (mario | luigi) [the green | the red]` - invalid
+
+### Repeated Optionals
+
+Due to exponential parsing issues with the current system, using repeated Optionals can cause unexpected behavior, such as not recognizing valid phrases and complete loss of all recognitions.
+
+`[apple]+` or `[apple]*`
+ * "apple" - Recognized
+ * "apple apple" - Recognized
+ * "apple apple apple" - Not recognized
+ * "apple apple apple apple" - Not recognized, other Rules no longer recognized, restoring Rule recognition requires Talon restart
+
+This issue is scheduled to be addressed in an upcoming version of Talon.
+
+### Context Set List Subtlety
+
+I am informed by Ryan Hileman that the rough simularity of the curly bracket syntax and the equivalent of a Grouping of Alternatives is only mostly accurate. There are some differences from that mental model that will come into play at a later date. At that time, the section will be updated to reflect these differences.
 
 
 
