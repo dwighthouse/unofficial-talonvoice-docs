@@ -14,6 +14,7 @@ There are several repositories containing example Scripts and tools available fo
 * [JonathanNickerson's scripts](https://github.com/JonathanNickerson/talon_voice_user_scripts)
 * [anonfunc's scripts](https://github.com/anonfunc/talon-user)
 * [jcooper-korg's scripts](https://github.com/jcooper-korg/talon_user)
+* [lexjacobs’ scripts](https://github.com/lexjacobs/talon_user)
 
 In the future, Talon will ship with a standard set of Voice Commands and language rules into which other systems can more consistently be built. For now, however, it is largely left to the individual user to download or make the Voice Commands and Scripts he wishes to use.
 
