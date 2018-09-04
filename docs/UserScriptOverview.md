@@ -5,6 +5,7 @@ The vast majority of speech/sound processing is controlled directly by Scripts i
 There are several repositories containing example Scripts and tools available for copying or using as samples to build from.
 
 * [Official Example Scripts](https://github.com/talonvoice/examples)
+* [Unofficial Community Scripts](https://github.com/dwiel/talon_community)
 * [dwighthouse's scripts](https://github.com/dwighthouse/talonvoice-scripts) - mine 😉
 * [tabrat's scripts](https://github.com/tabrat/talon_user)
 * [tuomassalo's scripts](https://github.com/tuomassalo/talon_user)
@@ -16,7 +17,7 @@ There are several repositories containing example Scripts and tools available fo
 * [jcooper-korg's scripts](https://github.com/jcooper-korg/talon_user)
 * [lexjacobs’ scripts](https://github.com/lexjacobs/talon_user)
 
-In the future, Talon will ship with a standard set of Voice Commands and language rules into which other systems can more consistently be built. For now, however, it is largely left to the individual user to download or make the Voice Commands and Scripts he wishes to use.
+In the future, Talon will ship with a standard set of Voice Commands and language rules into which other systems can more consistently be built. For now, however, there is an [unofficial community set of scripts](https://github.com/dwiel/talon_community) which can be used as a starting point (pull requests welcome). There are also a large number of public user scripts listed above. It is largely left to the individual user to download or make the Voice Commands and Scripts they wish to use.
 
 For those not wishing to start from scratch, a good place to begin is by downloading the [`std.py` file](https://github.com/talonvoice/examples/blob/master/std.py) and adding it to the `~/.talon/user` folder. Then, reading through the source code will illustrate what Voice Commands are available and how to begin adding new ones.
 
