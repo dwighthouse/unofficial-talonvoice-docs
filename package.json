@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/dwighthouse/unofficial-talonvoice-docs#readme",
   "devDependencies": {
-    "markdown-link-check": "3.5.4"
+    "markdown-link-check": "3.7.2"
   }
 }
