@@ -5,6 +5,7 @@ The vast majority of speech/sound processing is controlled directly by Scripts i
 There are several repositories containing example Scripts and tools available for copying or using as samples to build from.
 
 * [Official Example Scripts](https://github.com/talonvoice/examples)
+* [Unofficial Community Scripts](https://github.com/dwiel/talon_community) - an attempt at a comprehensive, kitchen sink included set of commands.
 * [dwighthouse's scripts](https://github.com/dwighthouse/talonvoice-scripts) - mine 😉
 * [tabrat's scripts](https://github.com/tabrat/talon_user)
 * [tuomassalo's scripts](https://github.com/tuomassalo/talon_user)
